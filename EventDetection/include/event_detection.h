@@ -7,8 +7,7 @@ class EventDetection {
 public:
     EventDetection();
     ~EventDetection();
-//    int Init();
-    int Init(const char *source_path);
+    int Init();
     int Detect(const char *audio_file);
     int Detect(const char *audio, int size);
 
