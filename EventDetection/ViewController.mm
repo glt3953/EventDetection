@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 @property (nonatomic, strong) WaverView *waverView;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIAlertView *alertView;
 
 @end
 
@@ -143,10 +145,43 @@
         }
         NSString *feat_conf_ = [bundle.bundlePath stringByAppendingString:@"/data/fbank.cfg"];
 //        int result = ed.Detect([[self audioRecordingPath] cStringUsingEncoding:NSASCIIStringEncoding]);
-//        NSString *recordPath = [self audioRecordingPath];
-        NSString *recordPath = [bundle.bundlePath stringByAppendingString:@"/safety_belt/5.mp3"];
+        NSString *recordPath = [self audioRecordingPath];
+//        NSString *recordPath = [bundle.bundlePath stringByAppendingString:@"/pcm/safety_belt_1.pcm"];
         int result = ed.Detect([recordPath cStringUsingEncoding:NSASCIIStringEncoding], [feat_conf_ cStringUsingEncoding:NSASCIIStringEncoding]);
         NSLog(@"Detect result:%d", result);
+        //1s后消失
+        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0/*延迟执行时间*/ * NSEC_PER_SEC));
+        if (result == 0) {
+            if (!_alertView) {
+                _alertView = [[UIAlertView alloc] init];
+                [_alertView setTitle:[NSString stringWithFormat:@"安全带未系住"]];
+            }
+            [_alertView show];
+            
+            __block UIAlertView *weakAlertView = _alertView;
+            dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                [weakAlertView dismissWithClickedButtonIndex:0 animated:YES];
+            });
+        } else {
+            if (!_imageView) {
+                CGFloat imageViewWidth = 200;
+                CGFloat imageViewHeight = 100;
+                CGPoint imageViewCenter = self.view.center;
+                _imageView = [[UIImageView alloc] initWithFrame:(CGRect){0, 0, imageViewWidth, imageViewHeight}];
+                [_imageView setBackgroundColor:[UIColor whiteColor]];
+                [_imageView setCenter:imageViewCenter];
+                [_imageView setImage:[UIImage imageNamed:@"redBag.png"]];
+                [self.view addSubview:_imageView];
+            }
+            _imageView.hidden = NO;
+            
+            __block UIImageView *weakImageView = _imageView;
+            dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                weakImageView.hidden = YES;
+            });
+        }
+        
+        //播放语音
         NSError *playbackError = nil;
         NSError *readingError = nil;
         NSData *fileData = [NSData dataWithContentsOfFile:recordPath options:NSDataReadingMapped error:&readingError];
