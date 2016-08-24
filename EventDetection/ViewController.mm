@@ -9,10 +9,12 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #include "event_detection.h"
+#import "WaverView.h"
 
 @interface ViewController () <AVAudioRecorderDelegate>
 
 @property (nonatomic, strong) AVAudioRecorder *recorder;
+@property (nonatomic, strong) WaverView *waverView;
 
 @end
 
@@ -85,6 +87,21 @@
     BOOL success = [self.recorder prepareToRecord];
     [self.recorder setMeteringEnabled:YES];
     success = [self.recorder record];
+    
+    if (!_waverView) {
+        CGFloat originX = -50; //将波纹的起始点挪至界面外
+        CGFloat viewHeight = 50;
+        //定制
+        _waverView = [[WaverView alloc] initWithFrame:CGRectMake(originX, CGRectGetHeight(self.view.bounds)/2.0 - viewHeight, CGRectGetWidth(self.view.bounds) + 2 * ABS(originX), viewHeight * 2)];
+    }
+    __block AVAudioRecorder *weakRecorder = self.recorder;
+    _waverView.waverLevelCallback = ^(WaverView *waverView) {
+        [weakRecorder updateMeters];
+        CGFloat normalizedValue = pow (10, [weakRecorder averagePowerForChannel:0] / 40);
+        waverView.level = normalizedValue;
+        
+    };
+    [self.view addSubview:_waverView];
 }
 
 - (IBAction)recogButtonDidClick:(id)sender {

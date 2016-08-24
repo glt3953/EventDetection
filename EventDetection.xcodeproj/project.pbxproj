@@ -19,6 +19,9 @@
 		F3C61D291D6AF65C008ACE63 /* EventDetectionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D281D6AF65C008ACE63 /* EventDetectionUITests.m */; };
 		F3C61D3B1D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */; };
 		F3C61D3F1D6AFC0D008ACE63 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D3E1D6AFC0D008ACE63 /* AVFoundation.framework */; };
+		F3E9245B1D6D4F3800176B6E /* WaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9245A1D6D4F3800176B6E /* WaverView.m */; };
+		F3E924611D6D4F6900176B6E /* UIColor+NingXia.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9245E1D6D4F6900176B6E /* UIColor+NingXia.m */; };
+		F3E924621D6D4F6900176B6E /* UIImage+NingXia.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E924601D6D4F6900176B6E /* UIImage+NingXia.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,12 @@
 		F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDeep_net_decode.ios.neon.a; sourceTree = "<group>"; };
 		F3C61D3E1D6AFC0D008ACE63 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F3E9244D1D6D460600176B6E /* lstm_score_ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lstm_score_ios.xcodeproj; path = dsb_iphone_chenjie_new/lstm_score_ios.xcodeproj; sourceTree = "<group>"; };
+		F3E924591D6D4F3800176B6E /* WaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaverView.h; sourceTree = "<group>"; };
+		F3E9245A1D6D4F3800176B6E /* WaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaverView.m; sourceTree = "<group>"; };
+		F3E9245D1D6D4F6900176B6E /* UIColor+NingXia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NingXia.h"; sourceTree = "<group>"; };
+		F3E9245E1D6D4F6900176B6E /* UIColor+NingXia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NingXia.m"; sourceTree = "<group>"; };
+		F3E9245F1D6D4F6900176B6E /* UIImage+NingXia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+NingXia.h"; sourceTree = "<group>"; };
+		F3E924601D6D4F6900176B6E /* UIImage+NingXia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NingXia.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +139,8 @@
 		F3C61D021D6AF65C008ACE63 /* EventDetection */ = {
 			isa = PBXGroup;
 			children = (
+				F3E9245C1D6D4F6900176B6E /* CategoryUI */,
+				F3E924581D6D4F3800176B6E /* WaverView */,
 				F3C61D361D6AF6CE008ACE63 /* include */,
 				F3C61D381D6AF6CE008ACE63 /* lib */,
 				F3C61D061D6AF65C008ACE63 /* AppDelegate.h */,
@@ -196,6 +207,26 @@
 				F3E924551D6D460600176B6E /* lstm_score_iosTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F3E924581D6D4F3800176B6E /* WaverView */ = {
+			isa = PBXGroup;
+			children = (
+				F3E924591D6D4F3800176B6E /* WaverView.h */,
+				F3E9245A1D6D4F3800176B6E /* WaverView.m */,
+			);
+			path = WaverView;
+			sourceTree = "<group>";
+		};
+		F3E9245C1D6D4F6900176B6E /* CategoryUI */ = {
+			isa = PBXGroup;
+			children = (
+				F3E9245D1D6D4F6900176B6E /* UIColor+NingXia.h */,
+				F3E9245E1D6D4F6900176B6E /* UIColor+NingXia.m */,
+				F3E9245F1D6D4F6900176B6E /* UIImage+NingXia.h */,
+				F3E924601D6D4F6900176B6E /* UIImage+NingXia.m */,
+			);
+			path = CategoryUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +386,9 @@
 			files = (
 				F3C61D0B1D6AF65C008ACE63 /* ViewController.mm in Sources */,
 				F3C61D081D6AF65C008ACE63 /* AppDelegate.m in Sources */,
+				F3E924621D6D4F6900176B6E /* UIImage+NingXia.m in Sources */,
+				F3E924611D6D4F6900176B6E /* UIColor+NingXia.m in Sources */,
+				F3E9245B1D6D4F3800176B6E /* WaverView.m in Sources */,
 				F3C61D051D6AF65C008ACE63 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
