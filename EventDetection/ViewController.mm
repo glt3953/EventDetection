@@ -63,7 +63,8 @@
 //    NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
     
     NSDictionary *settings = @{AVSampleRateKey:          [NSNumber numberWithFloat:16000.0],
-                               AVFormatIDKey:            [NSNumber numberWithInt:kAudioFormatAppleLossless],
+//                               AVFormatIDKey:            [NSNumber numberWithInt:kAudioFormatAppleLossless],
+                               AVFormatIDKey:            [NSNumber numberWithInt: kAudioFormatLinearPCM],
                                AVNumberOfChannelsKey:    [NSNumber numberWithInt:2],
                                AVEncoderAudioQualityKey: [NSNumber numberWithInt:AVAudioQualityMin]};
     
@@ -142,11 +143,13 @@
         }
         NSString *feat_conf_ = [bundle.bundlePath stringByAppendingString:@"/data/fbank.cfg"];
 //        int result = ed.Detect([[self audioRecordingPath] cStringUsingEncoding:NSASCIIStringEncoding]);
-        int result = ed.Detect([[self audioRecordingPath] cStringUsingEncoding:NSASCIIStringEncoding], [feat_conf_ cStringUsingEncoding:NSASCIIStringEncoding]);
+//        NSString *recordPath = [self audioRecordingPath];
+        NSString *recordPath = [bundle.bundlePath stringByAppendingString:@"/safety_belt/5.mp3"];
+        int result = ed.Detect([recordPath cStringUsingEncoding:NSASCIIStringEncoding], [feat_conf_ cStringUsingEncoding:NSASCIIStringEncoding]);
         NSLog(@"Detect result:%d", result);
         NSError *playbackError = nil;
         NSError *readingError = nil;
-        NSData *fileData = [NSData dataWithContentsOfFile:[self audioRecordingPath] options:NSDataReadingMapped error:&readingError];
+        NSData *fileData = [NSData dataWithContentsOfFile:recordPath options:NSDataReadingMapped error:&readingError];
         AVAudioPlayer *newPlayer = [[AVAudioPlayer alloc] initWithData:fileData
                                                                  error:&playbackError];
         if (newPlayer != nil) {

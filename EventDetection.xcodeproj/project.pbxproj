@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F36D1CE01D6C5C9D0094B3FB /* data in Resources */ = {isa = PBXBuildFile; fileRef = F36D1CDF1D6C5C9D0094B3FB /* data */; };
-		F36D1CE21D6C5CF60094B3FB /* liblstm_score_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F36D1CE11D6C5CF60094B3FB /* liblstm_score_ios.a */; };
 		F3C61D051D6AF65C008ACE63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D041D6AF65C008ACE63 /* main.m */; };
 		F3C61D081D6AF65C008ACE63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D071D6AF65C008ACE63 /* AppDelegate.m */; };
 		F3C61D0B1D6AF65C008ACE63 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D0A1D6AF65C008ACE63 /* ViewController.mm */; };
@@ -17,11 +16,13 @@
 		F3C61D131D6AF65C008ACE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C61D111D6AF65C008ACE63 /* LaunchScreen.storyboard */; };
 		F3C61D1E1D6AF65C008ACE63 /* EventDetectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D1D1D6AF65C008ACE63 /* EventDetectionTests.m */; };
 		F3C61D291D6AF65C008ACE63 /* EventDetectionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D281D6AF65C008ACE63 /* EventDetectionUITests.m */; };
-		F3C61D3B1D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */; };
 		F3C61D3F1D6AFC0D008ACE63 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D3E1D6AFC0D008ACE63 /* AVFoundation.framework */; };
 		F3E9245B1D6D4F3800176B6E /* WaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9245A1D6D4F3800176B6E /* WaverView.m */; };
 		F3E924611D6D4F6900176B6E /* UIColor+NingXia.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9245E1D6D4F6900176B6E /* UIColor+NingXia.m */; };
 		F3E924621D6D4F6900176B6E /* UIImage+NingXia.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E924601D6D4F6900176B6E /* UIImage+NingXia.m */; };
+		F3E924661D6D71C400176B6E /* libDeep_net_decode.ios.neon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */; };
+		F3E924671D6D71C400176B6E /* liblstm_score_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F36D1CE11D6C5CF60094B3FB /* liblstm_score_ios.a */; };
+		F3E924691D6D754E00176B6E /* safety_belt in Resources */ = {isa = PBXBuildFile; fileRef = F3E924681D6D754E00176B6E /* safety_belt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		F3E9245E1D6D4F6900176B6E /* UIColor+NingXia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NingXia.m"; sourceTree = "<group>"; };
 		F3E9245F1D6D4F6900176B6E /* UIImage+NingXia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+NingXia.h"; sourceTree = "<group>"; };
 		F3E924601D6D4F6900176B6E /* UIImage+NingXia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NingXia.m"; sourceTree = "<group>"; };
+		F3E924681D6D754E00176B6E /* safety_belt */ = {isa = PBXFileReference; lastKnownFileType = folder; path = safety_belt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3E924661D6D71C400176B6E /* libDeep_net_decode.ios.neon.a in Frameworks */,
+				F3E924671D6D71C400176B6E /* liblstm_score_ios.a in Frameworks */,
 				F3C61D3F1D6AFC0D008ACE63 /* AVFoundation.framework in Frameworks */,
-				F36D1CE21D6C5CF60094B3FB /* liblstm_score_ios.a in Frameworks */,
-				F3C61D3B1D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +195,7 @@
 		F3C61D381D6AF6CE008ACE63 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				F3E924681D6D754E00176B6E /* safety_belt */,
 				F36D1CE11D6C5CF60094B3FB /* liblstm_score_ios.a */,
 				F36D1CDF1D6C5C9D0094B3FB /* data */,
 				F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */,
@@ -360,6 +363,7 @@
 				F3C61D101D6AF65C008ACE63 /* Assets.xcassets in Resources */,
 				F36D1CE01D6C5C9D0094B3FB /* data in Resources */,
 				F3C61D0E1D6AF65C008ACE63 /* Main.storyboard in Resources */,
+				F3E924691D6D754E00176B6E /* safety_belt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
