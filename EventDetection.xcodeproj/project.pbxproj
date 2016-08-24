@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F36D1CE01D6C5C9D0094B3FB /* data in Resources */ = {isa = PBXBuildFile; fileRef = F36D1CDF1D6C5C9D0094B3FB /* data */; };
+		F36D1CE21D6C5CF60094B3FB /* liblstm_score_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F36D1CE11D6C5CF60094B3FB /* liblstm_score_ios.a */; };
 		F3C61D051D6AF65C008ACE63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D041D6AF65C008ACE63 /* main.m */; };
 		F3C61D081D6AF65C008ACE63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D071D6AF65C008ACE63 /* AppDelegate.m */; };
-		F3C61D0B1D6AF65C008ACE63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D0A1D6AF65C008ACE63 /* ViewController.m */; };
+		F3C61D0B1D6AF65C008ACE63 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D0A1D6AF65C008ACE63 /* ViewController.mm */; };
 		F3C61D0E1D6AF65C008ACE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C61D0C1D6AF65C008ACE63 /* Main.storyboard */; };
 		F3C61D101D6AF65C008ACE63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C61D0F1D6AF65C008ACE63 /* Assets.xcassets */; };
 		F3C61D131D6AF65C008ACE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C61D111D6AF65C008ACE63 /* LaunchScreen.storyboard */; };
 		F3C61D1E1D6AF65C008ACE63 /* EventDetectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D1D1D6AF65C008ACE63 /* EventDetectionTests.m */; };
 		F3C61D291D6AF65C008ACE63 /* EventDetectionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C61D281D6AF65C008ACE63 /* EventDetectionUITests.m */; };
 		F3C61D3B1D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */; };
-		F3C61D3C1D6AF6CE008ACE63 /* libdsb_iphone.arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D3A1D6AF6CE008ACE63 /* libdsb_iphone.arm64.a */; };
+		F3C61D3F1D6AFC0D008ACE63 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C61D3E1D6AFC0D008ACE63 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,15 +36,31 @@
 			remoteGlobalIDString = F3C61CFF1D6AF65C008ACE63;
 			remoteInfo = EventDetection;
 		};
+		F3C61D511D6B086F008ACE63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3C61D4C1D6B086E008ACE63 /* lstm_score_ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E140C67D1B1BFF05009662FB;
+			remoteInfo = lstm_score_ios;
+		};
+		F3C61D531D6B086F008ACE63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3C61D4C1D6B086E008ACE63 /* lstm_score_ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E140C6881B1BFF05009662FB;
+			remoteInfo = lstm_score_iosTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F36D1CDF1D6C5C9D0094B3FB /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		F36D1CE11D6C5CF60094B3FB /* liblstm_score_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblstm_score_ios.a; sourceTree = "<group>"; };
 		F3C61D001D6AF65C008ACE63 /* EventDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C61D041D6AF65C008ACE63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3C61D061D6AF65C008ACE63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3C61D071D6AF65C008ACE63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F3C61D091D6AF65C008ACE63 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F3C61D0A1D6AF65C008ACE63 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F3C61D0A1D6AF65C008ACE63 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		F3C61D0D1D6AF65C008ACE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3C61D0F1D6AF65C008ACE63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3C61D121D6AF65C008ACE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +73,8 @@
 		F3C61D2A1D6AF65C008ACE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C61D371D6AF6CE008ACE63 /* event_detection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = event_detection.h; sourceTree = "<group>"; };
 		F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDeep_net_decode.ios.neon.a; sourceTree = "<group>"; };
-		F3C61D3A1D6AF6CE008ACE63 /* libdsb_iphone.arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdsb_iphone.arm64.a; sourceTree = "<group>"; };
+		F3C61D3E1D6AFC0D008ACE63 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F3C61D4C1D6B086E008ACE63 /* lstm_score_ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lstm_score_ios.xcodeproj; path = "../../滴滴出行/语音/安全带声音识别/dsb_iphone_chenjie_new/lstm_score_ios.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C61D3C1D6AF6CE008ACE63 /* libdsb_iphone.arm64.a in Frameworks */,
+				F3C61D3F1D6AFC0D008ACE63 /* AVFoundation.framework in Frameworks */,
+				F36D1CE21D6C5CF60094B3FB /* liblstm_score_ios.a in Frameworks */,
 				F3C61D3B1D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +108,8 @@
 		F3C61CF71D6AF65C008ACE63 = {
 			isa = PBXGroup;
 			children = (
+				F3C61D4C1D6B086E008ACE63 /* lstm_score_ios.xcodeproj */,
+				F3C61D3E1D6AFC0D008ACE63 /* AVFoundation.framework */,
 				F3C61D021D6AF65C008ACE63 /* EventDetection */,
 				F3C61D1C1D6AF65C008ACE63 /* EventDetectionTests */,
 				F3C61D271D6AF65C008ACE63 /* EventDetectionUITests */,
@@ -113,7 +135,7 @@
 				F3C61D061D6AF65C008ACE63 /* AppDelegate.h */,
 				F3C61D071D6AF65C008ACE63 /* AppDelegate.m */,
 				F3C61D091D6AF65C008ACE63 /* ViewController.h */,
-				F3C61D0A1D6AF65C008ACE63 /* ViewController.m */,
+				F3C61D0A1D6AF65C008ACE63 /* ViewController.mm */,
 				F3C61D0C1D6AF65C008ACE63 /* Main.storyboard */,
 				F3C61D0F1D6AF65C008ACE63 /* Assets.xcassets */,
 				F3C61D111D6AF65C008ACE63 /* LaunchScreen.storyboard */,
@@ -160,10 +182,20 @@
 		F3C61D381D6AF6CE008ACE63 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				F36D1CE11D6C5CF60094B3FB /* liblstm_score_ios.a */,
+				F36D1CDF1D6C5C9D0094B3FB /* data */,
 				F3C61D391D6AF6CE008ACE63 /* libDeep_net_decode.ios.neon.a */,
-				F3C61D3A1D6AF6CE008ACE63 /* libdsb_iphone.arm64.a */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		F3C61D4D1D6B086E008ACE63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3C61D521D6B086F008ACE63 /* liblstm_score_ios.a */,
+				F3C61D541D6B086F008ACE63 /* lstm_score_iosTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +288,12 @@
 			mainGroup = F3C61CF71D6AF65C008ACE63;
 			productRefGroup = F3C61D011D6AF65C008ACE63 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F3C61D4D1D6B086E008ACE63 /* Products */;
+					ProjectRef = F3C61D4C1D6B086E008ACE63 /* lstm_score_ios.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F3C61CFF1D6AF65C008ACE63 /* EventDetection */,
@@ -265,6 +303,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		F3C61D521D6B086F008ACE63 /* liblstm_score_ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblstm_score_ios.a;
+			remoteRef = F3C61D511D6B086F008ACE63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F3C61D541D6B086F008ACE63 /* lstm_score_iosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = lstm_score_iosTests.xctest;
+			remoteRef = F3C61D531D6B086F008ACE63 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		F3C61CFE1D6AF65C008ACE63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -272,6 +327,7 @@
 			files = (
 				F3C61D131D6AF65C008ACE63 /* LaunchScreen.storyboard in Resources */,
 				F3C61D101D6AF65C008ACE63 /* Assets.xcassets in Resources */,
+				F36D1CE01D6C5C9D0094B3FB /* data in Resources */,
 				F3C61D0E1D6AF65C008ACE63 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C61D0B1D6AF65C008ACE63 /* ViewController.m in Sources */,
+				F3C61D0B1D6AF65C008ACE63 /* ViewController.mm in Sources */,
 				F3C61D081D6AF65C008ACE63 /* AppDelegate.m in Sources */,
 				F3C61D051D6AF65C008ACE63 /* main.m in Sources */,
 			);
