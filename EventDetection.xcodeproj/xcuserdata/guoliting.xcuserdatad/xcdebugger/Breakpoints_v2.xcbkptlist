@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "EventDetection::Init(const char *source_path)"
+            landmarkName = "EventDetection::Init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -175,7 +175,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "EventDetection::Init(const char *source_path)"
+            landmarkName = "EventDetection::Init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
