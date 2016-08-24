@@ -7,10 +7,13 @@ class EventDetection {
 public:
     EventDetection();
     ~EventDetection();
-    int Init();
-    int Detect(const char *audio_file);
-    int Detect(const char *audio, int size);
-
+//    int Init();
+    int Init(const char *ed_conf_, const char *model_file_);
+//    int Detect(const char *audio_file);
+//    int Detect(const char *audio, int size);
+    int Detect(const char *audio_file, const char *feat_conf_);
+    int Detect(const char *audio, int size, const char *feat_conf_);
+    
 private:
     int pack_duration_; // seconds
     int left_context_;

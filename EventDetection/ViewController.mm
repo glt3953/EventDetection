@@ -60,7 +60,7 @@
     NSURL *audioRecordingUrl = [NSURL fileURLWithPath:pathOfRecordingFile];
 //    NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
     
-    NSDictionary *settings = @{AVSampleRateKey:          [NSNumber numberWithFloat:44100.0],
+    NSDictionary *settings = @{AVSampleRateKey:          [NSNumber numberWithFloat:16000.0],
                                AVFormatIDKey:            [NSNumber numberWithInt:kAudioFormatAppleLossless],
                                AVNumberOfChannelsKey:    [NSNumber numberWithInt:2],
                                AVEncoderAudioQualityKey: [NSNumber numberWithInt:AVAudioQualityMin]};
@@ -96,7 +96,8 @@
     NSString *result = nil;
     NSArray *folders = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsFolde = [folders objectAtIndex:0];
-    result = [documentsFolde stringByAppendingPathComponent:@"Recording.m4a"];
+//    result = [documentsFolde stringByAppendingPathComponent:@"Recording.m4a"];
+    result = [documentsFolde stringByAppendingPathComponent:@"Recording.pcm"];
     return result;
 }
 
@@ -108,19 +109,23 @@
         NSString *kRecordTonePath = @"data/";
         NSString *kRecordToneFileEx = @".cfg";
         NSBundle *bundle = [NSBundle mainBundle];
-        NSString *path = [bundle.bundlePath stringByAppendingString:@"/data/fbank.cfg"];
+        NSString *path = [bundle.bundlePath stringByAppendingString:@"/data/ed.cfg"];
 //        NSString *path = [bundle pathForResource:@"fbank" ofType:kRecordToneFileEx inDirectory:kRecordTonePath];
         NSFileManager *fm = [NSFileManager defaultManager];
         NSData *data = [[NSData alloc] init];
         data = [fm contentsAtPath:path];
         NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-        int ret = ed.Init();
+//        int ret = ed.Init();
+        NSString *ed_conf_ = [bundle.bundlePath stringByAppendingString:@"/data/ed.cfg"];
+        NSString *model_file_ = [bundle.bundlePath stringByAppendingString:@"/data/safety_belt.model"];
+        int ret = ed.Init([ed_conf_ cStringUsingEncoding:NSASCIIStringEncoding], [model_file_ cStringUsingEncoding:NSASCIIStringEncoding]);
         if(ret != 0) {
             NSLog(@"Fail to init EventDetection");
 //            return;
         }
-//        char *filePath = [[self audioRecordingPath] cStringUsingEncoding:NSASCIIStringEncoding];
-        int result = ed.Detect([[self audioRecordingPath] cStringUsingEncoding:NSASCIIStringEncoding]);
+        NSString *feat_conf_ = [bundle.bundlePath stringByAppendingString:@"/data/fbank.cfg"];
+//        int result = ed.Detect([[self audioRecordingPath] cStringUsingEncoding:NSASCIIStringEncoding]);
+        int result = ed.Detect([[self audioRecordingPath] cStringUsingEncoding:NSASCIIStringEncoding], [feat_conf_ cStringUsingEncoding:NSASCIIStringEncoding]);
         NSLog(@"Detect result:%d", result);
         NSError *playbackError = nil;
         NSError *readingError = nil;
